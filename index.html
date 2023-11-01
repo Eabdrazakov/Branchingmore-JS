@@ -15,6 +15,7 @@
             Enter your age and height in the form below and we'll show you what rides you can go on.</p>
 
         <form>
+            <p id="error-message" class="hidden">Please enter an age and height in whole numbers.</p>
             <label for="age">Age</label>
             <input id="age" type="text" name="age">
             <label for="height">Height in inches</label>
@@ -37,6 +38,10 @@
         <div id="ent20" class="hidden">
             <h1>Sorry, you are too young!</h1>
             <p>Come back when you are 21 years old.</p>
+        </div>
+        <div id="error-message" class="hidden">
+            <h1>Sorry</h1>
+            <p>Please enter an age and height in whole numbers.</p>
         </div>
     </div>
 </body>

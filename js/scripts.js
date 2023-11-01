@@ -1,14 +1,15 @@
-function hideResults() {
+function hideResultsAndError() {
     document.getElementById("ent21").setAttribute("class", "hidden");
     document.getElementById("ent25").setAttribute("class", "hidden");
     document.getElementById("ent35").setAttribute("class", "hidden");
     document.getElementById("ent20").setAttribute("class", "hidden");
+    document.getElementById("error-message").setAttribute("class", "hidden");
 }
 
 window.onload = function () {
     document.querySelector("form").onsubmit = function (event) {
         event.preventDefault();
-        hideResults();
+        hideResultsAndError();
         const age = parseInt(document.querySelector("input#age").value);
         const height = parseInt(document.querySelector("input#height").value);
 
@@ -21,8 +22,10 @@ window.onload = function () {
             document.getElementById("ent25").removeAttribute("class");
         } else if (age >= 21) {
             document.getElementById("ent21").removeAttribute("class");
-        } else {
+        } else if (age <= 20) {
             document.getElementById("ent20").removeAttribute("class");
+        } else {
+            document.getElementById("error-message").removeAttribute("class");
         }
-    }
+    };
 };
